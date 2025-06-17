@@ -149,7 +149,7 @@ createComment(tweetId: number) {
       this.tweetPeso = 0;
     });
 
-  }
+  } 
  
 
   addReaction(tweetId: number, reactionId: number) {
