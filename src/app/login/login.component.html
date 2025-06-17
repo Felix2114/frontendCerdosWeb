@@ -1,0 +1,33 @@
+<div class="login-table-container">
+  <table class="login-table">
+    <tr>
+      <td>Login</td>
+      <td><a routerLink="/">Cancel</a></td>
+    </tr>
+    <tr>
+      <td>Username</td>
+      <td>
+        <input type="email" [(ngModel)]="email"> <br>{{email}}
+      </td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>
+        <input type="password" [(ngModel)]="password"> <br>{{password}}
+      </td>
+    </tr>
+    
+    <tr>
+      <td></td>
+      <td>
+        <button (click)="callLogin()">Log In</button> <br>{{ myLogin.username }}
+      </td>
+    </tr>
+    <tr>
+      <td></td>
+      <td>
+        New? <a routerLink="/newuser">Create Account</a>
+      </td>
+    </tr>
+  </table>
+</div>

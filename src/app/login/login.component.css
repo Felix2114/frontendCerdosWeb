@@ -1,0 +1,109 @@
+/* Contenedor del login con estilo moderno */
+.login-table-container {
+  max-width: 420px;
+  margin: 50px auto;
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  overflow: hidden;
+  padding: 30px;
+  background-color: #fef2f9;
+}
+
+/* Tabla de login */
+table.login-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Estilo para las celdas de la tabla */
+.login-table td {
+  padding: 15px;
+  border: none;
+  vertical-align: middle;
+}
+
+/* Estilo para el texto en la primera columna */
+.login-table td:first-child {
+  font-weight: 600;
+  color: #333;
+  width: 35%;
+  text-align: right;
+}
+
+/* Estilo de los inputs (email y password) */
+.login-table input[type="email"],
+.login-table input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 2px solid #ffb3d9;
+  border-radius: 12px;
+  background-color: #ffe6f0;
+  color: #5e4e5e;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.login-table input:focus {
+  border-color: #ff66b3;
+  outline: none;
+  box-shadow: 0 0 8px rgba(255, 102, 179, 0.5);
+}
+
+/* Estilo para los enlaces (ej. "Olvidaste tu contraseña") */
+.login-table a {
+  text-decoration: none;
+  color: #ff66b3;
+  font-size: 0.9em;
+  transition: color 0.3s ease;
+}
+
+.login-table a:hover {
+  color: #ff3385;
+  text-decoration: underline;
+}
+
+/* Estilo del botón de login */
+.login-table button {
+  background-color: #ff66b3;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+}
+
+.login-table button:hover {
+  background-color: #ff3385;
+  transform: translateY(-3px);
+}
+
+.login-table button:active {
+  transform: translateY(1px);
+}
+
+/* Estilo para la última fila de la tabla (centrado) */
+.login-table tr:last-child td {
+  text-align: center;
+  font-size: 0.9em;
+  padding-bottom: 20px;
+}
+
+/* Animación de entrada suave para el formulario */
+.login-table-container {
+  opacity: 0;
+  animation: fadeIn 0.6s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}

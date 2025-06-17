@@ -1,0 +1,104 @@
+<div class="container color-light">
+  <div class="col">
+    <h2>Crear un Nuevo Tweet</h2>
+    <form (ngSubmit)="addTweet()">
+      <div class="input-group">
+        <label for="tweetText">Tweet</label>
+        <textarea class="txt" name="tweetText" id="tweetText" placeholder="Escribe tu tweet..." [(ngModel)]="tweetText" required></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="tweetUrl">URL de la Imagen</label>
+        <input type="text" id="tweetUrl" class="txt" name="url" placeholder="URL de la imagen" [(ngModel)]="tweetUrl">
+      </div>
+
+      <div class="input-group">
+        <label for="tweetDescription">Descripción</label>
+        <textarea class="txt" id="tweetDescription" name="description" placeholder="Escribe una descripción para tu tweet" [(ngModel)]="tweetDescription"></textarea>
+      </div>
+
+      <div class="input-group">
+        <label for="tweetNombre">Nombre</label>
+        <input type="text" id="tweetNombre" class="txt" name="nombre" placeholder="Nombre" [(ngModel)]="tweetNombre">
+      </div>
+
+      <div class="input-group">
+        <label for="tweetRaza">Raza</label>
+        <input type="text" id="tweetRaza" class="txt" name="raza" placeholder="Raza" [(ngModel)]="tweetRaza">
+      </div>
+
+      <div class="input-group">
+        <label for="tweetPeso">Peso</label>
+        <input type="number" id="tweetPeso" class="txt" name="peso" placeholder="Peso" [(ngModel)]="tweetPeso">
+      </div>
+
+      <div class="input-group">
+        <button type="submit" class="btn">Tweet</button>
+      </div>
+    </form>
+  </div>
+
+
+
+  <div class="col">
+    <h2>Tweets</h2>
+    <div *ngFor="let tweet of tweets" class="tweet-container">
+      <div class="tweet">
+        <p><strong>{{tweet.id}} - {{tweet.tweet}}</strong></p>
+        <p>{{tweet.description}}</p>
+        <p><strong>Nombre:</strong> {{tweet.nombre}}</p>
+        <p><strong>Peso:</strong> {{tweet.peso}}</p>
+        <p><strong>Raza:</strong> {{tweet.raza}}</p>
+        <p>
+          <a *ngIf="tweet.url" href="{{tweet.url}}" target="_blank" rel="noopener noreferrer">Ver Imagen</a>
+        </p>
+      </div>
+
+      <div class="reactions-buttons">
+        <button (click)="addReaction(tweet.id!, 1)">👍 Like</button>
+        <button (click)="addReaction(tweet.id!, 2)">❤️ Love</button>
+        <button (click)="addReaction(tweet.id!, 3)">🤬​ Hate</button>
+        <button (click)="addReaction(tweet.id!, 4)">😢​ Sad</button>
+        <button (click)="addReaction(tweet.id!, 5)">😡​ Angry</button>
+      </div>
+
+      <div *ngIf="reactionsByTweet[tweet.id] && reactionsByTweet[tweet.id].length > 0">
+        <p><strong>Reacciones:</strong></p>
+        <ul>
+          <li *ngFor="let reaction of reactionsByTweet[tweet.id]">
+            {{ reaction.reaction?.description || 'Reacción' }} por {{ reaction.user?.username || 'Usuario desconocido' }}
+          </li>
+        </ul>
+      </div>
+
+      <div *ngIf="commentsByTweet[tweet.id] && commentsByTweet[tweet.id].length > 0">
+      <p><strong>Comentarios:</strong></p>
+      <ul>
+        <li *ngFor="let comment of commentsByTweet[tweet.id]">
+          <p>comento</p>{{comment.user.username}}
+          <br>
+          {{ comment.content }}
+        </li>
+      </ul>
+    </div>
+
+
+    <!-- Crear comentario -->
+    <div class="comment-form">
+      <input
+        class="txt"
+        type="text"
+        [(ngModel)]="newCommentContent[tweet.id]"
+        name="comment-{{tweet.id}}"
+        placeholder="Escribe un comentario..."
+      />
+      <button (click)="createComment(tweet.id)">Comentar</button>
+    </div>
+
+
+
+
+
+
+    </div>
+</div>

@@ -1,0 +1,207 @@
+/* Contenedor principal con espaciado */
+.container.color-light {
+  display: flex;
+  justify-content: space-between;
+  gap: 25px;
+  margin: 40px;
+  padding: 20px;
+  background: linear-gradient(135deg, #ffe0ec 0%, #f9c2d0 100%);
+  border-radius: 20px;
+}
+
+/* Columnas */
+.col {
+  width: 48%;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.col:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Botón para mostrar el formulario */
+.post-button {
+  background-color: #ff80bf;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+.post-button:hover {
+  background-color: #ff66b3;
+  transform: translateY(-3px);
+}
+
+.post-button:active {
+  transform: translateY(1px);
+}
+
+/* Formulario de creación de tweet */
+.tweet-form {
+  display: block;
+}
+
+.tweet-form .input-group {
+  margin-bottom: 30px;
+}
+
+.txt {
+  width: 100%;
+  padding: 16px;
+  font-size: 18px;
+  margin: 10px 0;
+  border: 2px solid #f0b8d3;
+  border-radius: 15px;
+  background-color: #fef2f9;
+  color: #5e4e5e;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.txt:focus {
+  outline: none;
+  border-color: #ff7f8f;
+  box-shadow: 0 0 10px rgba(255, 127, 143, 0.5);
+  background-color: #fff;
+}
+
+/* Botón estilizado */
+.btn {
+  padding: 15px 30px;
+  background-color: #ff80bf;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-transform: uppercase;
+  box-shadow: 0 5px 15px rgba(255, 128, 191, 0.3);
+}
+
+.btn:hover {
+  background-color: #ff66b3;
+  transform: translateY(-3px);
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+/* Animación suave para el formulario de tweet */
+.tweet-form {
+  opacity: 0;
+  animation: fadeIn 0.6s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Estilo para los tweets */
+.tweet-container {
+  margin-bottom: 30px;
+  padding: 25px;
+  border: 2px solid #ffd6e6;
+  border-radius: 15px;
+  background-color: #ffe6f0;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+}
+
+.tweet-container:hover {
+  background-color: #ffd9eb;
+}
+
+.tweet {
+  background-color: #f8e6f7;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #f0b8d3;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.tweet:hover {
+  background-color: #ffebf5;
+  transform: translateY(-5px);
+}
+
+/* Estilo para los botones de reacciones */
+.reactions-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.reactions-buttons button {
+  background: #fff;
+  border: 2px solid #ff80bf;
+  color: #ff80bf;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex: 1;
+  margin: 0 5px;
+}
+
+.reactions-buttons button:hover {
+  background-color: #ff80bf;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.reactions-buttons button:focus {
+  outline: none;
+  border-color: #ff66b3;
+  box-shadow: 0 0 10px rgba(255, 127, 143, 0.5);
+}
+
+.comment-form button {
+  padding: 12px 20px;
+  background-color: #ff80bf;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  width: 100%;
+  text-transform: uppercase;
+  box-shadow: 0 5px 15px rgba(255, 128, 191, 0.3);
+  margin-top: 10px; /* Espaciado superior */
+}
+
+.comment-form button:hover {
+  background-color: #ff66b3;
+  transform: translateY(-3px);
+}
+
+.comment-form button:active {
+  transform: translateY(1px);
+}
+
+.comment-form button:focus {
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 127, 143, 0.5);
+}
