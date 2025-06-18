@@ -42,16 +42,14 @@
 
   <div class="col">
     <h2>Tweets</h2>
-    <div *ngIf="username">
-  <p>Bienvenido, {{ username }}!</p>
-</div>
+    
      <div class="tweets-wrapper">
     <div *ngFor="let tweet of tweets" class="tweet-container">
       <div class="tweet">
         <p><strong>{{tweet.id}} - {{tweet.tweet}}</strong></p>
         <p>{{tweet.description}}</p>
 
-        <p><strong>Posteado por:</strong> {{tweet.postedBy.username}}</p>
+       
         <p><strong>Nombre:</strong> {{tweet.nombre}}</p>
         <p><strong>Peso:</strong> {{tweet.peso}}</p>
         <p><strong>Raza:</strong> {{tweet.raza}}</p>

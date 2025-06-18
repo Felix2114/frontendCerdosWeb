@@ -7,7 +7,7 @@ export class Tweet {
     peso: Number = 0;
     nombre: String ="";
       postedBy: {
-    id: number; // id del usuario
-    username: string; // nombre de usuario
+    id: number;
+    username: string; 
   } = { id: 0, username: "" }; 
 }

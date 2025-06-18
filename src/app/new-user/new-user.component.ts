@@ -19,13 +19,13 @@ export class NewUserComponent {
  myNewUser = new User();
 
 createUser() {
-    // Validamos que el email, nombre y contraseña no estén vacíos
+    
     if (!this.myNewUser.email || !this.myNewUser.username || !this.myNewUser.password) {
       console.error('Todos los campos son obligatorios.');
       return;
     }
 
-    // Aquí se llama al servicio para crear un nuevo usuario
+  
     this.userService.createUser(this.myNewUser).subscribe({
       next: (res) => {
         console.log('Usuario creado:', res);
