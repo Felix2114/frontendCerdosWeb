@@ -14,6 +14,7 @@ import { CommentsService } from '../services/comments.service';
 })
 export class HomeComponent {
     username : string = "";
+    userId : number = 0;
     tweetText : string = "";
      tweetUrl: string = '';
   tweetDescription: string = '';
@@ -35,9 +36,11 @@ export class HomeComponent {
                )
     {
 
-      
-       this.username = this.storageService.getSession("user");
-       console.log("nombre del usuario=",this.username);
+       this.username = this.storageService.getSession("username");
+       this.userId = this.storageService.getSession("userId");
+        console.log("USER ID",this.userId);
+   console.log("USER NAME",this.username);
+ 
        this.getTweets();
        this.getReactions();
       // this.getComments();
@@ -136,7 +139,11 @@ createComment(tweetId: number) {
       description: this.tweetDescription,
       nombre: this.tweetNombre,
       raza: this.tweetRaza,
-      peso: this.tweetPeso
+      peso: this.tweetPeso,
+      postedBy: {
+      id: +this.userId, 
+      username:  this.username
+    }
     };
 
     this.tweetService.postTweet(newTweet).subscribe((response: any) => {

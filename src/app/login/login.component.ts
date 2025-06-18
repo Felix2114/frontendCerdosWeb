@@ -41,9 +41,10 @@ export class LoginComponent {
        ).subscribe((data : any)  => {
          
        console.log('user logged: ', JSON.stringify(data));
-       this.storageService.setSession("user", data.email);
+       this.storageService.setSession("email", data.email);
        //console.log("Token : " + JSON.parse(JSON.stringify(data)).accessToken);
        this.storageService.setSession("userId", data.id);
+       this.storageService.setSession("username", data.username);
        console.log("id", data.id);
        this.storageService.setSession("token", JSON.parse(JSON.stringify(data)).accessToken);
 
