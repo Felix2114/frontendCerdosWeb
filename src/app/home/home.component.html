@@ -49,9 +49,12 @@
         <p><strong>Nombre:</strong> {{tweet.nombre}}</p>
         <p><strong>Peso:</strong> {{tweet.peso}}</p>
         <p><strong>Raza:</strong> {{tweet.raza}}</p>
-        <p>
-          <a *ngIf="tweet.url" href="{{tweet.url}}" target="_blank" rel="noopener noreferrer">Ver Imagen</a>
-        </p>
+
+        <p *ngIf="tweet.url">
+  
+  <img [src]="tweet.url" alt="Imagen del tweet" class="tweet-img">
+</p>
+
       </div>
 
       <div class="reactions-buttons">
@@ -62,25 +65,25 @@
         <button (click)="addReaction(tweet.id!, 5)">😡​ Angry</button>
       </div>
 
-      <div *ngIf="reactionsByTweet[tweet.id] && reactionsByTweet[tweet.id].length > 0">
-        <p><strong>Reacciones:</strong></p>
-        <ul>
-          <li *ngFor="let reaction of reactionsByTweet[tweet.id]">
-            {{ reaction.reaction?.description || 'Reacción' }} por {{ reaction.user?.username || 'Usuario desconocido' }}
-          </li>
-        </ul>
-      </div>
+     <div *ngIf="reactionsByTweet[tweet.id] && reactionsByTweet[tweet.id].length > 0" class="reactions-section">
+  <p><strong>Reacciones:</strong></p>
+  <ul>
+    <li *ngFor="let entry of getReactionCounts(tweet.id) | keyvalue">
+      {{ entry.key }}: {{ entry.value }}
+    </li>
+  </ul>
+</div>
 
-      <div *ngIf="commentsByTweet[tweet.id] && commentsByTweet[tweet.id].length > 0">
-      <p><strong>Comentarios:</strong></p>
-      <ul>
-        <li *ngFor="let comment of commentsByTweet[tweet.id]">
-          <p>comento</p>{{comment.user.username}}
-          <br>
-          {{ comment.content }}
-        </li>
-      </ul>
-    </div>
+<div *ngIf="commentsByTweet[tweet.id] && commentsByTweet[tweet.id].length > 0" class="comments-section">
+  <p><strong>Comentarios:</strong></p>
+  <ul>
+    <li *ngFor="let comment of commentsByTweet[tweet.id]">
+      <p>{{ comment.user.username }}</p>
+      {{ comment.content }}
+    </li>
+  </ul>
+</div>
+
 
 
     <!-- Crear comentario -->

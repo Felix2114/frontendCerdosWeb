@@ -205,3 +205,62 @@
   outline: none;
   box-shadow: 0 0 10px rgba(255, 127, 143, 0.5);
 }
+
+
+.tweet-img {
+  max-width: 400px;
+  height: auto;
+  margin-top: 10px;
+  border-radius: 8px;
+}
+
+
+.reactions-section,
+.comments-section {
+  background-color: #fff;
+  border: 2px solid #ffb6d9;
+  border-radius: 12px;
+  padding: 10px 14px;
+  margin-top: 12px;
+  box-shadow: 0 1px 3px rgba(255, 182, 217, 0.4);
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Títulos */
+.reactions-section p strong,
+.comments-section p strong {
+  font-size: 15px;
+  color: #d63384;
+  margin-bottom: 6px;
+  display: inline-block;
+}
+
+/* Lista */
+.reactions-section ul,
+.comments-section ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+/* Elementos */
+.reactions-section li,
+.comments-section li {
+  background-color: #fff0f6;
+  padding: 6px 10px;
+  margin-bottom: 6px;
+  border-radius: 8px;
+  border: 1px solid #ffc2d4;
+  line-height: 1.4;
+}
+
+/* Estilo del nombre del usuario en comentarios */
+.comments-section li p {
+  margin: 0 0 4px 0;
+  font-weight: 600;
+  color: #c2185b;
+  font-size: 13px;
+}
+

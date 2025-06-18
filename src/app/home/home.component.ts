@@ -177,4 +177,19 @@ createComment(tweetId: number) {
     });
   }
 
+
+  getReactionCounts(tweetId: number): { [key: string]: number } {
+  const counts: { [key: string]: number } = {};
+
+  const reactions = this.reactionsByTweet[tweetId] || [];
+
+  for (const reaction of reactions) {
+    const description = reaction.reaction?.description || 'Desconocida';
+    counts[description] = (counts[description] || 0) + 1;
+  }
+
+  return counts;
+}
+
+
 }
