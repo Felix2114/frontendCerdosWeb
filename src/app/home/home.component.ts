@@ -94,7 +94,7 @@ createComment(tweetId: number) {
     return;
   }
 
-  // Acceder al comentario específico para el tweetId
+ 
   if (!this.newCommentContent[tweetId]?.trim()) {
     console.warn("Comentario vacío");
     return;
@@ -102,7 +102,7 @@ createComment(tweetId: number) {
 
   const newComment = {
     tweetId: tweetId,
-    content: this.newCommentContent[tweetId] // Usar el comentario del tweet específico
+    content: this.newCommentContent[tweetId]
   };
 
   this.commentsService.createComment(newComment).subscribe({
@@ -114,7 +114,7 @@ createComment(tweetId: number) {
       }
       this.commentsByTweet[tweetId].push(createdComment);
 
-      // Limpiar el comentario para ese tweetId
+      
       this.newCommentContent[tweetId] = ''; 
     },
     error: (error) => {
@@ -153,8 +153,7 @@ createComment(tweetId: number) {
  
 
   addReaction(tweetId: number, reactionId: number) {
-    const userId = Number(this.storageService.getSession("userId")); // o como guardes el id usuario
-
+    const userId = Number(this.storageService.getSession("userId")); 
     if (!userId) {
       console.error("Usuario no autenticado");
       return;

@@ -42,6 +42,7 @@
 
   <div class="col">
     <h2>Tweets</h2>
+     <div class="tweets-wrapper">
     <div *ngFor="let tweet of tweets" class="tweet-container">
       <div class="tweet">
         <p><strong>{{tweet.id}} - {{tweet.tweet}}</strong></p>
@@ -103,5 +104,6 @@
 
 
 
+    </div>
     </div>
 </div>
